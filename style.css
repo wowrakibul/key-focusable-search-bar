@@ -1,0 +1,238 @@
+*,
+html,
+body {
+    box-sizing: border-box;
+    font-family: 'inter';
+}
+
+a {
+    text-decoration: none;
+}
+
+:root {
+    --background: #ebeefe;
+    --background-orange: #ffe8d5;
+
+    --logo_text: var(--text-primary);
+
+    --link_text: #ff6f00;
+    --link_text-hover: var(--button-primary);
+    --text-primary: #11111f;
+    --text-secondary: #11111fbf;
+
+    --button-primary: #ff9d00;
+    --button-secondary: #ff9d00d5;
+}
+
+
+body {
+    top: 100%;
+    display: grid;
+    place-items: center;
+    gap: 64px;
+    margin-top: 50px;
+    background: var(--background-orange);
+}
+
+.elements {
+    position: relative;
+}
+
+.shape__sqr {
+    position: absolute;
+    top: -50;
+    transform: translateX(10%);
+    width: 60px;
+    animation: shape__sqr 6000ms linear infinite;
+}
+
+@keyframes shape__sqr {
+    0% {
+        rotate: 0deg;
+    }
+
+    50% {
+        rotate: 90deg;
+    }
+
+    100% {
+        rotate: 0deg;
+    }
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    text-decoration: none;
+    float: left;
+}
+
+.logo img {
+    width: 56px;
+    border-radius: 32px;
+}
+
+.logo__name {
+    font-size: 32px;
+    font-weight: 700;
+    font-family: 'Roboto Mono', monospace;
+    color: var(--logo_text);
+}
+
+.follow__button {
+    padding: 20px 32px;
+    background: var(--button-primary);
+    color: var(--text-primary);
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+.follow__button:hover {
+    background: var(--button-secondary);
+}
+
+.follow_button_mscr {
+    display: none;
+    padding: 10px 20px;
+    font-size: 32px;
+    font-weight: 400;
+}
+
+.note,
+.search__guide {
+    background: #ff74020f;
+    border-left: 4px rgba(255, 85, 0, 0.326) solid;
+    width: auto;
+    padding: 16px;
+}
+
+code {
+    font-size: 14px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+    background: #01003916;
+    padding: 4px 12px;
+}
+
+.about__me {
+    width: 80%;
+    text-align: center;
+    font-size: 32px;
+    line-height: 44px;
+    font-weight: 600;
+}
+
+.wr__link {
+    color: var(--link_text);
+}
+
+.wr__link:hover {
+    color: var(--link_text-hover);
+    border-bottom: 3px var(--button-primary) solid;
+}
+
+/* search bar container */
+
+.search-container {
+    display: grid;
+    place-items: center;
+    width: 75%;
+}
+
+input {
+    border: 2px transparent solid;
+    border-radius: 12px;
+    outline: none;
+    padding: 24px 32px;
+    background: #ffffff;
+    box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.1);
+}
+
+input:focus {
+    box-shadow: 0px 0px 16px rgba(255, 115, 0, 0.227);
+}
+
+#search-input {
+    outline: none;
+    padding: 20px 32px;
+    border-radius: 100px;
+    border: 2px rgb(255, 255, 255) solid;
+    width: 90%;
+}
+
+#search-input:focus-within {
+    background: #fff;
+    border: 2px #ff73005a solid;
+}
+
+input[placeholder="Search..."] {
+    font-size: 16px;
+}
+
+input[placeholder="Search..."]:focus-within {
+    color: rgb(26, 34, 34);
+}
+
+
+/* search suugestion */
+
+#suggestions-list {
+    position: absolute;
+    top: 50;
+    transform: translateY(60%);
+    padding: 12px;
+    margin: 0;
+    display: none;
+    width: 66%;
+    z-index: 1;
+    background-color: #ffffff96;
+    list-style-type: none;
+    border-radius: 12px;
+    box-shadow: 0px 10px 10px 0px rgba(22, 22, 22, 0.038);
+    backdrop-filter: blur(15px);
+}
+
+#suggestions-list li {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+#suggestions-list li:hover {
+    background-color: #00000010;
+    transition: .2s ease;
+}
+
+@media screen and (max-width: 1260px) {
+    .about__me {
+        font-size: 24px;
+        line-height: 32px;
+    }
+}
+
+@media screen and (max-width: 996px) {
+    .about__me {
+        font-size: 24px;
+        line-height: 32px;
+    }
+}
+
+@media screen and (max-width: 620px) {
+
+    .logo__name {
+        display: none;
+    }
+
+    .about__me {
+        font-size: 20px;
+        line-height: 28px;
+    }
+}
